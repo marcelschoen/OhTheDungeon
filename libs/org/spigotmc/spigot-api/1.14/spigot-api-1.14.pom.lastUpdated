@@ -1,0 +1,16 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Dec 12 22:57:49 CET 2021
+https\://ci.ender.zone/plugin/repository/everything/.lastUpdated=1639346268766
+https\://hub.spigotmc.org/nexus/content/repositories/snapshots/.error=
+https\://repo.extendedclip.com/content/repositories/placeholderapi/.lastUpdated=1639346269608
+https\://repo.extendedclip.com/content/repositories/placeholderapi/.error=
+https\://hub.spigotmc.org/nexus/content/repositories/snapshots/.lastUpdated=1639346267262
+file\:///data/devel/idea-workspace/RoguelikeDungeonsOnly/jars/.lastUpdated=1639346269608
+https\://oss.sonatype.org/content/groups/public/.error=
+file\:///data/devel/idea-workspace/RoguelikeDungeonsOnly/jars/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1639346269712
+https\://maven.enginehub.org/repo/.error=
+https\://ci.ender.zone/plugin/repository/everything/.error=
+https\://repo.maven.apache.org/maven2/.error=
+https\://oss.sonatype.org/content/groups/public/.lastUpdated=1639346268212
+https\://maven.enginehub.org/repo/.lastUpdated=1639346269105

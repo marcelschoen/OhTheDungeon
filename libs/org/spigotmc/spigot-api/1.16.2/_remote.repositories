@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Dec 12 23:01:01 CET 2021
+spigot-api-1.16.2.jar>=
+spigot-api-1.16.2.pom>=
