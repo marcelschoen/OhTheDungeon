@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>games.play4ever</groupId>
-    <artifactId>roguelike-dungeon-root</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <groupId>otd</groupId>
+    <artifactId>oh-the-dungeons-root</artifactId>
+    <version>15.5-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-    <name>RogueLikeDungeonsOnly</name>
-    <description>Spin-off from 'Oh the Dungeons you'll go', but with only the 'Roguelike Dungeons'.</description>
+    <name>OhTheDungeonsYoullGo</name>
+    <description>Oh The Dungeons You'll go - add dungeons to your MC world!</description>
 
     <properties>
         <java.version>1.17</java.version>
@@ -18,6 +18,11 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <modules>
+        <module>spigot-libs</module>
+        <module>plugin</module>
+    </modules>
 
     <repositories>
         <repository>
@@ -43,99 +48,6 @@
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
-
-        <repository>
-            <id>localrepository</id>
-            <url>file://${project.basedir}/libs</url>
-        </repository>
-
     </repositories>
 
-    <build>
-        <sourceDirectory>${project.basedir}/src</sourceDirectory>
-        <resources>
-            <resource><directory>${project.basedir}/resources</directory></resource>
-        </resources>
-    </build>
-    <dependencies>
-        <!-- Placeholder API -->
-        <dependency>
-            <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.10.10</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- World edit -->
-        <dependency>
-            <groupId>com.sk89q.worldedit</groupId>
-            <artifactId>worldedit-bukkit</artifactId>
-            <version>7.2.0-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sk89q.worldedit</groupId>
-            <artifactId>worldedit-core</artifactId>
-            <version>7.2.0-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- Vault API -->
-        <dependency>
-            <groupId>net.milkbowl.vault</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.7</version>
-        </dependency>
-        <!--
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.17-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        -->
-        <!-- Older spigot versions -->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <classifier></classifier>
-            <version>1.14</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.15.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.17.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.18.1</version>
-            <scope>provided</scope>
-        </dependency>
-
-    </dependencies>
 </project>
