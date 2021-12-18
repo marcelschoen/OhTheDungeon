@@ -2,8 +2,8 @@ package forge_sandbox.greymerk.roguelike.treasure.loot.books;
 
 import forge_sandbox.greymerk.roguelike.treasure.loot.BookBase;
 import forge_sandbox.greymerk.roguelike.worldgen.IWorldEditor;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.StringUtils;
 import otd.util.FormatItem;
 
 import java.util.ArrayList;
