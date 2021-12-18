@@ -102,17 +102,17 @@ public class WeightedRandomLoot implements Comparable<WeightedRandomLoot>, IWeig
 	public int getWeight(){
 		return this.weight;
 	}
-        
-        private static class Get117R1 {
-            public ItemStack get(ItemStack item, Object nbt) {
-                net.minecraft.world.item.ItemStack tmp = 
-                        org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack.asNMSCopy(item);
-                tmp.setTag((net.minecraft.nbt.NBTTagCompound) nbt);
-                item = org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack.asBukkitCopy(tmp);
-                return item;
-            }
-        }
-
+/*
+	private static class Get117R1 {
+		public ItemStack get(ItemStack item, Object nbt) {
+			net.minecraft.world.item.ItemStack tmp =
+					org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack.asNMSCopy(item);
+			tmp.setTag((net.minecraft.nbt.NBTTagCompound) nbt);
+			item = org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack.asBukkitCopy(tmp);
+			return item;
+		}
+	}
+*/
 	@Override
 	public ItemStack get(Random rand) {
 		ItemStack item = null;
@@ -124,7 +124,9 @@ public class WeightedRandomLoot implements Comparable<WeightedRandomLoot>, IWeig
 			// ignore
 		}
 		if(this.nbt != null) {
-                    item = (new Get117R1()).get(item, this.nbt);
+                    //item = (new Get117R1()).get(item, this.nbt);
+					// TODO - VERIFY THAT THIS STILL WORKS
+					return new ItemStack(item);
                 }
 		return item;
 	}

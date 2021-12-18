@@ -21,7 +21,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.generator.BlockPopulator;
-import org.spigotmc.SpigotConfig;
 import otd.lib.DungeonWorldManager;
 import otd.lib.async.io.papermc.lib.PaperLib;
 import otd.populator.DungeonPopulator;
@@ -69,8 +68,8 @@ public class Diagnostic {
     }
     
     private static boolean getBoolean(String path, boolean def, String worldName) {
-        SpigotConfig.config.addDefault("world-settings.default." + path, def);
-        return SpigotConfig.config.getBoolean("world-settings." + worldName + "." + path, SpigotConfig.config.getBoolean("world-settings.default." + path));
+        return Bukkit.spigot().getConfig().getBoolean("world-settings." + worldName + "." + path,
+                Bukkit.spigot().getConfig().getBoolean("world-settings.default." + path, def));
     }
 
     

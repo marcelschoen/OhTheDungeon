@@ -1,50 +1,47 @@
 package forge_sandbox.greymerk.roguelike.treasure.loot;
 
 import forge_sandbox.greymerk.roguelike.util.DyeColor;
+import org.bukkit.Color;
+import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.FireworkEffectMeta;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Firework {
 
-    private static class Firework117R1 {
-        public ItemStack get(Random rand, int stackSize) {
-            ItemStack rocket = new ItemStack(Material.FIREWORK_ROCKET, stackSize);
-            net.minecraft.nbt.NBTTagCompound tag = new net.minecraft.nbt.NBTTagCompound();
-            net.minecraft.nbt.NBTTagCompound fireworks = new net.minecraft.nbt.NBTTagCompound();
-
-            fireworks.setByte("Flight", (byte) (rand.nextInt(3) + 1));
-
-            net.minecraft.nbt.NBTTagList explosion = new net.minecraft.nbt.NBTTagList();
-
-            net.minecraft.nbt.NBTTagCompound properties = new net.minecraft.nbt.NBTTagCompound();
-            properties.setByte("Flicker", (byte) (rand.nextBoolean() ? 1 : 0));
-            properties.setByte("Trail", (byte) (rand.nextBoolean() ? 1 : 0));
-            properties.setByte("Type", (byte) (rand.nextInt(5)));
-
-            int size = rand.nextInt(4) + 1;
-            int[] colorArr = new int[size];
-            for(int i = 0; i < size; ++i){
-                colorArr[i] = DyeColor.HSLToColor(rand.nextFloat(), (float)1.0, (float)0.5);
-            }
-
-            net.minecraft.nbt.NBTTagIntArray colors = new net.minecraft.nbt.NBTTagIntArray(colorArr);
-            properties.set("Colors", colors);
-
-            explosion.add(properties);
-            fireworks.set("Explosions", explosion);
-            tag.set("Fireworks", fireworks);
-
-            net.minecraft.world.item.ItemStack tmp = org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack.asNMSCopy(rocket);
-            tmp.setTag(tag);
-            rocket = org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack.asBukkitCopy(tmp);
-            
-            return rocket;
-        }
-    }
-
     public static ItemStack get(Random rand, int stackSize) {
-        return (new Firework117R1()).get(rand, stackSize);
+        List<Color> colors = new ArrayList<>();
+        int size = rand.nextInt(4) + 1;
+        for(int i = 0; i < size; ++i){
+            colors.add(Color.fromRGB(DyeColor.HSLToColor(rand.nextFloat(), (float)1.0, (float)0.5)));
+        }
+
+        FireworkEffect.Type type = FireworkEffect.Type.BALL;
+        switch(rand.nextInt(4)) {
+            case 0:
+                type = FireworkEffect.Type.BALL_LARGE;
+            case 1:
+                type = FireworkEffect.Type.BURST;
+            case 2:
+                type = FireworkEffect.Type.CREEPER;
+            case 3:
+                type = FireworkEffect.Type.STAR;
+        }
+        FireworkEffect effect = FireworkEffect.builder()
+                .withColor(colors)
+                .trail(rand.nextBoolean())
+                .flicker(rand.nextBoolean())
+                .with(type)
+                .build();
+        ItemStack charge = new ItemStack(Material.FIREWORK_ROCKET, stackSize);
+        FireworkEffectMeta meta = (FireworkEffectMeta) charge.getItemMeta();
+        meta.setEffect(effect);
+        charge.setItemMeta(meta);
+
+        return charge;
     }
 }
