@@ -20,7 +20,6 @@
     </properties>
 
     <modules>
-        <module>spigot-libs</module>
         <module>plugin</module>
     </modules>
 
