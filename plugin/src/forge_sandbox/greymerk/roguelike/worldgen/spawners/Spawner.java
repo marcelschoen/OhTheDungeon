@@ -4,7 +4,6 @@ import forge_sandbox.greymerk.roguelike.dungeon.settings.LevelSettings;
 import forge_sandbox.greymerk.roguelike.worldgen.Coord;
 import forge_sandbox.greymerk.roguelike.worldgen.IWorldEditor;
 import org.bukkit.entity.EntityType;
-import otd.MultiVersion;
 
 import java.util.Random;
 
@@ -42,7 +41,7 @@ public enum Spawner {
             case BLAZE: return EntityType.BLAZE;
             case SLIME: return EntityType.SLIME;
             case PRIMEDTNT: return EntityType.PRIMED_TNT;
-            case PIGZOMBIE: return MultiVersion.getPigZombieForUnknownVersion();
+            case PIGZOMBIE: return EntityType.ZOMBIFIED_PIGLIN;
             default: return EntityType.ZOMBIE;
         }
     }

@@ -1,8 +1,6 @@
 package forge_sandbox.greymerk.roguelike.worldgen.spawners;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import forge_sandbox.greymerk.roguelike.util.WeightedChoice;
 import forge_sandbox.greymerk.roguelike.util.WeightedRandomizer;
 import forge_sandbox.greymerk.roguelike.worldgen.Coord;
 import forge_sandbox.greymerk.roguelike.worldgen.IWorldEditor;
@@ -52,7 +50,7 @@ public class SpawnerSettings {
 			this.spawners.get(type).merge(other.spawners.get(type));
 		}
 	}
-	
+	/*
 	public void add(JsonObject entry) throws Exception{
 		if(!entry.has("type")) throw new Exception("Spawners entry missing type");
 		
@@ -73,6 +71,7 @@ public class SpawnerSettings {
 		
 		this.spawners.get(type).add(toAdd);
 	}
+	 */
 
 	public void generate(IWorldEditor editor, Random rand, Coord cursor, Spawner type, int level){
 		Spawnable toSpawn = spawners.containsKey(type) ? spawners.get(type).get(rand) : new Spawnable(type);

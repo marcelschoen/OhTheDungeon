@@ -6,7 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import otd.util.FormatItem;
-import otd.util.nbt.JsonToNBT;
 
 import java.util.Random;
 import java.util.logging.Level;
@@ -23,7 +22,7 @@ public class WeightedRandomLoot implements Comparable<WeightedRandomLoot>, IWeig
 	private int enchLevel;
 	private int weight;
 	
-	private Object nbt;
+////////////	private Object nbt;
         
         
 	
@@ -86,8 +85,9 @@ public class WeightedRandomLoot implements Comparable<WeightedRandomLoot>, IWeig
 			min = 1;
 			max = 1;
 		}
-		
-		if(json.has("nbt")) this.nbt = (Object) JsonToNBT.getTagFromJson(json.get("nbt").getAsString());
+
+		// TODO - POSSIBLY Re-IMPLEMENT NBT JSON SUPPORT LATER
+		//////////////if(json.has("nbt")) this.nbt = (Object) JsonToNBT.getTagFromJson(json.get("nbt").getAsString());
 		
 	}
 
@@ -123,11 +123,6 @@ public class WeightedRandomLoot implements Comparable<WeightedRandomLoot>, IWeig
 		} catch (NullPointerException e){
 			// ignore
 		}
-		if(this.nbt != null) {
-                    //item = (new Get117R1()).get(item, this.nbt);
-					// TODO - VERIFY THAT THIS STILL WORKS
-					return new ItemStack(item);
-                }
 		return item;
 	}
 

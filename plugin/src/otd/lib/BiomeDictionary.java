@@ -215,21 +215,13 @@ public class BiomeDictionary
         // TODO - FIX COMMENTED OUT BIOME TYPES / ADD MISSING ONES
 
 
-        if(otd.Main.version != otd.MultiVersion.Version.UNKNOWN) {
-            if(otd.Main.version == otd.MultiVersion.Version.V1_16_R1
-                    || otd.Main.version == otd.MultiVersion.Version.V1_16_R2
-                    || otd.Main.version == otd.MultiVersion.Version.V1_16_R3
-                    || otd.Main.version == otd.MultiVersion.Version.V1_17_R1) {
-                addTypes(Biome.valueOf("NETHER_WASTES"),     HOT,      DRY,        NETHER              );
-                addTypes(Biome.valueOf("SOUL_SAND_VALLEY"),     HOT,      DRY,        NETHER              );
-                addTypes(Biome.valueOf("CRIMSON_FOREST"),     HOT,      DRY,        NETHER     , FOREST         );
-                addTypes(Biome.valueOf("WARPED_FOREST"),     HOT,      DRY,        NETHER      , FOREST        );
-                addTypes(Biome.valueOf("BASALT_DELTAS"),     HOT,      DRY,        NETHER              );
-            } else {
-                addTypes(Biome.valueOf("NETHER"),     HOT,      DRY,        NETHER              );
-            }
-        }
-        
+        addTypes(Biome.valueOf("NETHER_WASTES"),     HOT,      DRY,        NETHER              );
+        addTypes(Biome.valueOf("SOUL_SAND_VALLEY"),     HOT,      DRY,        NETHER              );
+        addTypes(Biome.valueOf("CRIMSON_FOREST"),     HOT,      DRY,        NETHER     , FOREST         );
+        addTypes(Biome.valueOf("WARPED_FOREST"),     HOT,      DRY,        NETHER      , FOREST        );
+        addTypes(Biome.valueOf("BASALT_DELTAS"),     HOT,      DRY,        NETHER              );
+
+
         addTypes(Biome.OCEAN,                            OCEAN                                                   );
         addTypes(Biome.WARM_OCEAN,                            OCEAN                                                   );
 //        addTypes(Biome.DEEP_WARM_OCEAN,                            OCEAN                         );

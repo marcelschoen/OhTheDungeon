@@ -57,7 +57,8 @@ public class TreePopulator extends SurfaceBlockPopulator {
             if(biome.equals(Biome.FOREST))
                 world.generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.BIRCH);
 
-            else if(biome.equals(Biome.JUNGLE) || biome.equals(Biome.JUNGLE_HILLS)) {
+//            else if(biome.equals(Biome.JUNGLE) || biome.equals(Biome.JUNGLE_HILLS)) {
+            else if(biome.equals(Biome.JUNGLE)) {
                 switch(rand.nextInt(3)) {
                 case 0:
                     world.generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.JUNGLE);
@@ -72,7 +73,8 @@ public class TreePopulator extends SurfaceBlockPopulator {
                     break;
                 }
 
-            } else if(biome.equals(Biome.MUSHROOM_FIELDS) || biome.equals(Biome.MUSHROOM_FIELD_SHORE)) {
+//            } else if(biome.equals(Biome.MUSHROOM_FIELDS) || biome.equals(Biome.MUSHROOM_FIELD_SHORE)) {
+            } else if(biome.equals(Biome.MUSHROOM_FIELDS)) {
                 switch(rand.nextInt(2)) {
                 case 0:
                     world.generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.RED_MUSHROOM);
@@ -83,10 +85,12 @@ public class TreePopulator extends SurfaceBlockPopulator {
                     break;
                 }
 
-            } else if(biome.equals(Biome.SWAMP) || biome.equals(Biome.SWAMP_HILLS))
+//            } else if(biome.equals(Biome.SWAMP) || biome.equals(Biome.SWAMP_HILLS))
+            } else if(biome.equals(Biome.SWAMP))
                 chunk.getWorld().generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.SWAMP);
 
-            else if(biome.equals(Biome.TAIGA) || biome.equals(Biome.TAIGA_HILLS)) {
+//            else if(biome.equals(Biome.TAIGA) || biome.equals(Biome.TAIGA_HILLS)) {
+            else if(biome.equals(Biome.TAIGA)) {
                 switch(rand.nextInt(2)) {
                 case 0:
                     world.generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.REDWOOD);
@@ -101,7 +105,8 @@ public class TreePopulator extends SurfaceBlockPopulator {
                 world.generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.TREE);
 
         } else if(surfaceBlock.getType() == Material.SAND)
-            if(biome.equals(Biome.DESERT) || biome.equals(Biome.DESERT_HILLS)) {
+//            if(biome.equals(Biome.DESERT) || biome.equals(Biome.DESERT_HILLS)) {
+            if(biome.equals(Biome.DESERT)) {
                 // Determine the cactus height
                 int cactusHeight = rand.nextInt(3);
 
